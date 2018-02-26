@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 
 import DevTools from './DevTools'
-import App from './App'
+import Game from './Game'
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <div>
-      <App />
+      <Game />
       <DevTools />
     </div>
   </Provider>
