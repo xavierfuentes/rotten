@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux'
 
-import ui from './ui'
-import hero from './hero'
+import vitals from './vitals'
 
 export default combineReducers({
-  ui,
-  hero,
+  vitals,
 })
