@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Loop from '../../loop/containers/Loop'
+
 export default class Game extends Component {
   static propTypes = {
     children: PropTypes.any,
@@ -8,6 +10,6 @@ export default class Game extends Component {
 
   render() {
     const { children } = this.props;
-    return <div>{children}</div>
+    return <Loop>{children}</Loop>
   }
 }

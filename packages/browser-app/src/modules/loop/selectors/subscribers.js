@@ -1,0 +1,1 @@
+export const getAllSubscribers = state => state.loop.subscribers
