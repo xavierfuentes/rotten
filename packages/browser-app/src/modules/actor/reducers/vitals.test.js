@@ -1,7 +1,7 @@
 import * as actionCreators from '../actions/creators';
 import reducer, { DEFAULT_STATE } from './vitals';
 
-describe('Hero vitals reducer', () => {
+describe('Actor vitals reducer', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual(DEFAULT_STATE);
   });

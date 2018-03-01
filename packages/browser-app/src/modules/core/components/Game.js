@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Hero from '../../hero/containers/Hero';
+import Actor from '../../actor/containers/Actor';
 
 export default class Game extends Component {
   static propTypes = {};
@@ -33,7 +33,7 @@ export default class Game extends Component {
 
   render() {
     return (
-      <Hero />
+      <Actor />
     );
   }
 }

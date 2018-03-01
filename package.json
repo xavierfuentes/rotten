@@ -1,8 +1,7 @@
 {
   "name": "rotten",
   "version": "0.1.0",
-  "scripts": {
-  },
+  "scripts": {},
   "devDependencies": {
     "eslint": "^4.1.1",
     "husky": "^0.14.3",

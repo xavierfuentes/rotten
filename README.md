@@ -8,7 +8,7 @@
 - Day/night cycle
 - Seamless transition between scenarios
 
-### Hero
+### Actor
 - needs to eat, drink and sleep
 - different activities affect differently the vitals: walking vs running
 - Can get damage from the environment and NPCs: e.g. jumping has a chance of sprained ankle
@@ -33,6 +33,6 @@
 - Have no vital needs (sleep, eat or drink)
 - Suffer decay
 
-### Multiplayer
+### Multiactor
 - mmo open world
 - Community goals affect physically the world
