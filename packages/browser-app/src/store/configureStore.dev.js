@@ -3,16 +3,18 @@ import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 // import api from '../middleware/api'
 import rootReducer from '../modules/core/reducers'
-import DevTools from '../modules/core/containers/DevTools'
+// import DevTools from '../modules/core/containers/DevTools'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const configureStore = preloadedState => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    compose(
+    composeEnhancers(
       // applyMiddleware(thunk, api, createLogger()),
       applyMiddleware(thunk, createLogger()),
-      DevTools.instrument()
+      // DevTools.instrument()
     )
   )
 
