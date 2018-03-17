@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 
 export default class Actor extends React.Component {
   static propTypes = {
     subscribeToLoop: PropTypes.func.isRequired,
   };
-
-  id = v4();
 
   loop() {
     this.checkVitals();
@@ -30,7 +27,7 @@ export default class Actor extends React.Component {
   };
 
   componentDidMount() {
-    this.props.subscribeToLoop(this.id, this.loop.bind(this));
+    this.props.subscribeToLoop(this.loop.bind(this));
   }
 
   render() {

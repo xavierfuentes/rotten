@@ -1,8 +1,8 @@
 import * as actionTypes from './types';
 
-export const subscribeToLoop = (id, callback) => ({
+export const subscribeToLoop = callback => ({
   type: actionTypes.SUBSCRIBE_TO_LOOP,
-  payload: { id, callback },
+  payload: { callback },
 });
 
 export const unsubscribeFromLoop = () => ({

@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import Game from '../components/Game'
-import { allLoopersAsArray } from '../selectors/loopers'
+import { allLoopersSelector } from '../selectors/loopers'
 
 const mapStateToProps = (state, ownProps) => ({
-  loopers: allLoopersAsArray(state)
+  loopers: allLoopersSelector(state)
 });
 const mapDispatchToProps = {};
 
