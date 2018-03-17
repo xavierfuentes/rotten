@@ -8,11 +8,11 @@ export default class Game extends Component {
 
   loopID = null;
 
-  loop = () => {
+  loop = now => {
     const { loopers } = this.props;
 
     loopers.forEach(callback => {
-      callback.call();
+      callback.call(null, now);
     });
 
     this.loopID = window.requestAnimationFrame(this.loop);
