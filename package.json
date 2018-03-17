@@ -1,11 +1,14 @@
 {
   "name": "rotten",
   "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {},
   "devDependencies": {
     "eslint": "^4.1.1",
     "husky": "^0.14.3",
-    "lerna": "^2.9.0",
     "lint-staged": "^7.0.0",
     "prettier": "^1.10.2"
   },

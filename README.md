@@ -1,6 +1,6 @@
 # Rotten 🧟‍
 
-> Zombie apocalypse survival game
+> Zombie apocalypse (maybe turn based?) survival game
 
 ### World
 - The character spawns alone (different background story each time?) in a random position in the scenario
@@ -8,7 +8,7 @@
 - Day/night cycle
 - Seamless transition between scenarios
 
-### Actor
+### Player
 - needs to eat, drink and sleep
 - different activities affect differently the vitals: walking vs running
 - Can get damage from the environment and NPCs: e.g. jumping has a chance of sprained ankle
@@ -33,6 +33,14 @@
 - Have no vital needs (sleep, eat or drink)
 - Suffer decay
 
-### Multiactor
+### Multiplayer
 - mmo open world
 - Community goals affect physically the world
+
+### Inspirations
+- MiniDayZ
+- Project Zomboid
+- State of Decay
+- Zombies!
+- Into The Breach
+- X-Com
