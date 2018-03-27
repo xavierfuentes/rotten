@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import loopers from './loopers';
+import game from './game'
+import loop from '../../../store/enhancers/loop/reducers'
 
 export default combineReducers({
-  loopers,
+  game,
+  loop
 });

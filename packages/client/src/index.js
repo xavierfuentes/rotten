@@ -1,11 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider as ReduxProvider } from 'react-redux';
 
-import configureStore from './configureStore'
-import Root from './modules/core/components/Root'
+import './index.css';
+
 import registerServiceWorker from './registerServiceWorker';
+import configureStore from './store/configureStore';
 
-const store = configureStore()
+import Root from './modules/core/containers/Root';
 
-render(<Root store={store} />, document.getElementById('root'));
+const store = configureStore();
+
+render(
+  <ReduxProvider store={store}>
+    <Root />
+  </ReduxProvider>,
+  document.getElementById('root'),
+);
+
 registerServiceWorker();

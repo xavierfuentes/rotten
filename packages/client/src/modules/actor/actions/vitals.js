@@ -1,4 +1,9 @@
-import * as actionTypes from './types';
+export const actionTypes = {
+  UPDATE_HUNGER: 'UPDATE_HUNGER',
+  UPDATE_THIRST: 'UPDATE_THIRST',
+  UPDATE_FATIGUE: 'UPDATE_FATIGUE',
+  UPDATE_ENERGY: 'UPDATE_ENERGY',
+}
 
 export const updateHunger = hunger => ({
   type: actionTypes.UPDATE_HUNGER,

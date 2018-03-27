@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/types';
+import { actionTypes } from '../actions/vitals';
 
 export const DEFAULT_STATE = {
   energy: 0,

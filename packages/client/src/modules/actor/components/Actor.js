@@ -1,5 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+
+// import { LoopConsumer } from '../../../loopContext';
+// import { withLoop } from '../../core/enhancers/withLoop';
 
 /**
  * Approximately 60% of the adult body is made of water (75% in children).
@@ -8,26 +11,27 @@ import PropTypes from 'prop-types';
  * It can vary due to:
  * enviromental conditions, activity, age, health, weight, sex or food intake
  */
-export default class Actor extends React.Component {
-  static propTypes = {
-    subscribeToLoop: PropTypes.func.isRequired,
-  };
+class Actor extends React.Component {
+  static propTypes = {};
 
-  last = 0;
+  // last = 0;
 
-  loop = now => {
-    // execute the actor's loop only every second
-    if (!this.last || now - this.last >= 1000) {
-      this.last = now;
-      console.log('actor loop! -> ', now);
-    }
-  };
+  // loop = now => {
+  //   // execute the actor's loop only every second
+  //   if (!this.last || now - this.last >= 1000) {
+  //     this.last = now;
+  //     console.log('actor loop! -> ', now);
+  //   }
+  // };
 
   componentDidMount() {
-    this.props.subscribeToLoop(this.loop);
+    // this.props.subscribeToLoop(this.loop);
   }
 
   render() {
     return <div style={{ width: '10px', height: '10px', backgroundColor: '#444' }}>&nbsp;</div>;
   }
 }
+
+export default Actor;
+// export default withLoop(Actor)

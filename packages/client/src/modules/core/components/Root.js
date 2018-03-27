@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Provider } from 'react-redux';
 
-import './Root.css'
-import Game from '../containers/Game';
+import MainMenu from '../components/MainMenu';
+import Game from '../components/Game';
 
-const Root = ({ store }) => (
-  <Provider store={store}>
-    <Game />
-  </Provider>
-);
+export default class Root extends Component {
+  static propTypes = {
+    hasGameStarted: PropTypes.bool,
+    createGame: PropTypes.func.isRequired,
+  };
 
-Root.propTypes = {
-  store: PropTypes.object.isRequired,
-};
-
-export default Root;
+  render() {
+    const { createGame, fps, hasGameStarted = false } = this.props;
+    return (
+      <section>
+        <span>fps: {fps}</span>
+        {hasGameStarted ? <Game /> : <MainMenu createGame={createGame} />}
+      </section>
+    );
+  }
+}

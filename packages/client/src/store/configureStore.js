@@ -1,13 +1,16 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-// import api from '../middleware/api'
-import rootReducer from './modules/core/reducers';
+
+import rootReducer from '../modules/core/reducers';
+import { createGameLoop } from './enhancers/loop';
 
 const configureStore = preloadedState => {
-  const loggerMiddleware = createLogger({ collapsed: true });
+  const loggerMiddleware = createLogger({
+    collapsed: true,
+  });
   const middlewares = [thunkMiddleware, loggerMiddleware];
-  const enhancers = [applyMiddleware(...middlewares)];
+  const enhancers = [createGameLoop(), applyMiddleware(...middlewares)];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */
@@ -21,7 +24,7 @@ const configureStore = preloadedState => {
 
   if (process.env.NODE_ENV !== 'production' && module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./modules/core/reducers', () => {
+    module.hot.accept('../modules/core/reducers', () => {
       store.replaceReducer(rootReducer);
     });
   }
