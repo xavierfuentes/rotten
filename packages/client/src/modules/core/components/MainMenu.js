@@ -7,9 +7,9 @@ export default class MainMenu extends Component {
   };
 
   createGameClicked = () => {
-    const { createGame } = this.props
-    createGame && createGame()
-  }
+    const { createGame } = this.props;
+    createGame && createGame();
+  };
 
   render() {
     return (

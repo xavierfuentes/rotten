@@ -7,7 +7,7 @@ import Game from '../components/Game';
 export default class Root extends Component {
   static propTypes = {
     hasGameStarted: PropTypes.bool,
-    createGame: PropTypes.func.isRequired,
+    createGame: PropTypes.func.isRequired
   };
 
   render() {

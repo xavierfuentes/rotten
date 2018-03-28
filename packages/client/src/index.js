@@ -15,7 +15,7 @@ render(
   <ReduxProvider store={store}>
     <Root />
   </ReduxProvider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 registerServiceWorker();

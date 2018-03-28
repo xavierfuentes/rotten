@@ -1,7 +1,7 @@
 import { actionTypes } from '../actions';
 
 export const DEFAULT_STATE = {
-  fps: 0,
+  fps: 0
 };
 
 export default (state = DEFAULT_STATE, action) => {

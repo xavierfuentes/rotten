@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 
-import vitals from './vitals'
+import vitals from './vitals';
 
 export default combineReducers({
-  vitals,
-})
+  vitals
+});

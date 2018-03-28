@@ -5,5 +5,5 @@ import actor from '../../actor/reducers';
 
 export default combineReducers({
   core,
-  actor,
+  actor
 });

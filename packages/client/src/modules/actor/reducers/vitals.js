@@ -4,10 +4,13 @@ export const DEFAULT_STATE = {
   energy: 0,
   hunger: 0,
   thirst: 0,
-  fatigue: 0,
+  fatigue: 0
 };
 
-export default (state = DEFAULT_STATE, action = { type: '', payload: null }) => {
+export default (
+  state = DEFAULT_STATE,
+  action = { type: '', payload: null }
+) => {
   switch (action.type) {
     /* eslint-disable no-fallthrough */
     case actionTypes.UPDATE_ENERGY:

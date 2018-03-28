@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
-import * as gameActions from '../actions/game'
-import Root from '../components/Root'
+import * as gameActions from '../actions/game';
+import Root from '../components/Root';
 
 const mapStateToProps = (state, ownProps) => ({
   hasGameStarted: !!state.core.game.id,
-  fps: state.core.loop.fps,
+  fps: state.core.loop.fps
 });
 const mapDispatchToProps = {
   createGame: gameActions.createGame

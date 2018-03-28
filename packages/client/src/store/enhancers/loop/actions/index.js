@@ -1,10 +1,10 @@
 export const actionTypes = {
   START_LOOP: 'CORE/LOOP/START',
-  TICK_LOOP: 'CORE/LOOP/TICK',
+  TICK_LOOP: 'CORE/LOOP/TICK'
 };
 
 export const startLoop = () => ({
-  type: actionTypes.START_LOOP,
+  type: actionTypes.START_LOOP
 });
 
 export const tickLoop = ({ fps }) => {

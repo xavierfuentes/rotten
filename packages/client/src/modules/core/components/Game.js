@@ -32,8 +32,6 @@ export default class Game extends Component {
   // }
 
   render() {
-    return (
-      <Actor />
-    );
+    return <Actor />;
   }
 }

@@ -1,7 +1,7 @@
 import { actionTypes } from '../actions/game';
 
 export const DEFAULT_STATE = {
-  id: null,
+  id: null
 };
 
 export default (state = DEFAULT_STATE, action) => {
