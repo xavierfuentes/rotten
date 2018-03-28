@@ -4,10 +4,13 @@ import { createLogger } from 'redux-logger';
 
 import rootReducer from '../modules/core/reducers';
 import { createGameLoop } from './enhancers/loop';
+import { actionTypes as loopActionTypes } from './enhancers/loop/actions';
 
 const configureStore = preloadedState => {
+  const ignoredActionTypes = [loopActionTypes.TICK_LOOP];
   const loggerMiddleware = createLogger({
     collapsed: true,
+    predicate: (getState, { type }) => !ignoredActionTypes.includes(type),
   });
   const middlewares = [thunkMiddleware, loggerMiddleware];
   const enhancers = [createGameLoop(), applyMiddleware(...middlewares)];
