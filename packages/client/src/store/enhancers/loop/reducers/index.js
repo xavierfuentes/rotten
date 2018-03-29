@@ -7,7 +7,11 @@ export const DEFAULT_STATE = {
 export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case actionTypes.TICK_LOOP:
-      return { ...state, fps: action.payload.fps };
+      return {
+        ...state,
+        fps: action.payload.fps,
+        timestamp: action.payload.timestamp
+      };
     default:
       return state;
   }

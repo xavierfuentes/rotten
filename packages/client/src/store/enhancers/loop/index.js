@@ -17,7 +17,7 @@ export function createGameLoop() {
         }
         times.push(now);
         fps = times.length;
-        dispatch(tickLoop({ fps }));
+        dispatch(tickLoop({ timestamp: now, fps }));
       });
     });
 

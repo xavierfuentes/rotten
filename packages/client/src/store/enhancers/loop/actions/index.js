@@ -7,6 +7,6 @@ export const startLoop = () => ({
   type: actionTypes.START_LOOP
 });
 
-export const tickLoop = ({ fps }) => {
-  return { type: actionTypes.TICK_LOOP, payload: { fps } };
+export const tickLoop = ({ timestamp, fps }) => {
+  return { type: actionTypes.TICK_LOOP, payload: { timestamp, fps } };
 };
