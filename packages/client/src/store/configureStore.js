@@ -2,8 +2,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
-import rootReducer from '../modules/core/reducers';
-import { createGameLoop } from './enhancers/loop';
+import rootReducer from './rootReducer';
+import { createGameLoop } from './enhancers/loop/createGameLoop';
 import { actionTypes as loopActionTypes } from './enhancers/loop/actions';
 
 const configureStore = preloadedState => {
@@ -33,7 +33,7 @@ const configureStore = preloadedState => {
 
   if (process.env.NODE_ENV !== 'production' && module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../modules/core/reducers', () => {
+    module.hot.accept('./rootReducer', () => {
       store.replaceReducer(rootReducer);
     });
   }
