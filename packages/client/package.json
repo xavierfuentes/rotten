@@ -9,7 +9,6 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "eslint": "^4.1.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.7",
@@ -19,7 +18,21 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "eslint": "^4.1.1",
     "react-scripts": "^2.0.0",
     "redux-logger": "^3.0.6"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }
