@@ -2,9 +2,8 @@ import { actionTypes } from '../actions/vitals';
 
 export const DEFAULT_STATE = {
   energy: 0,
-  hunger: 0,
-  thirst: 0,
-  fatigue: 0
+  hydration: 0,
+  stamina: 0
 };
 
 export default (
@@ -14,10 +13,9 @@ export default (
   switch (action.type) {
     /* eslint-disable no-fallthrough */
     case actionTypes.UPDATE_ENERGY:
-    case actionTypes.UPDATE_HUNGER:
-    case actionTypes.UPDATE_THIRST:
+    case actionTypes.UPDATE_HYDRATION:
     /* eslint-enable no-fallthrough */
-    case actionTypes.UPDATE_FATIGUE:
+    case actionTypes.UPDATE_STAMINA:
       const key = action.type
         .split('UPDATE_')
         .pop()

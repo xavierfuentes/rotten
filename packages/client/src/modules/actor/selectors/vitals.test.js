@@ -7,20 +7,14 @@ describe('Actor vitals selectors', () => {
     );
   });
 
-  it('should return the level of fatigue', () => {
-    expect(selectors.getFatigue({ actor: { vitals: { fatigue: 0 } } })).toEqual(
-      0
-    );
+  it('should return the level of hydration', () => {
+    expect(
+      selectors.getHydration({ actor: { vitals: { hydration: 0 } } })
+    ).toEqual(0);
   });
 
-  it('should return the level of hunger', () => {
-    expect(selectors.getHunger({ actor: { vitals: { hunger: 0 } } })).toEqual(
-      0
-    );
-  });
-
-  it('should return the level of thirst', () => {
-    expect(selectors.getThirst({ actor: { vitals: { thirst: 0 } } })).toEqual(
+  it('should return the level of stamina', () => {
+    expect(selectors.getStamina({ actor: { vitals: { stamina: 0 } } })).toEqual(
       0
     );
   });
