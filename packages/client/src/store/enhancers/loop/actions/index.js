@@ -1,6 +1,6 @@
 export const actionTypes = {
-  START_LOOP: 'CORE/LOOP/START',
-  TICK_LOOP: 'CORE/LOOP/TICK'
+  START_LOOP: '@ROTTEN/LOOP/START',
+  TICK_LOOP: '@ROTTEN/LOOP/TICK'
 };
 
 export const startLoop = () => ({

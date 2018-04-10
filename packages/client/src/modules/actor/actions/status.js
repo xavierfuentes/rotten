@@ -1,5 +1,5 @@
 export const actionTypes = {
-  DIE: 'DIE'
+  DIE: '@ROTTEN/ACTOR/STATUS/DIE'
 };
 
 export const die = () => ({ type: actionTypes.DIE });

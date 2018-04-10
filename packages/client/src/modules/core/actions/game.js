@@ -1,7 +1,7 @@
 import v4 from 'uuid';
 
 export const actionTypes = {
-  START_GAME: 'CORE/GAME/START'
+  START_GAME: '@ROTTEN/CORE/GAME/START'
 };
 
 export const createGame = () => async dispatch => {
