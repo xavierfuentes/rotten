@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@xlabs/rotten-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {

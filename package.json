@@ -1,5 +1,5 @@
 {
-  "name": "rotten",
+  "name": "@xlabs/rotten",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
