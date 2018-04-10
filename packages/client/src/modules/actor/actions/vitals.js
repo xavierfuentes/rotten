@@ -19,8 +19,8 @@ export const updateStamina = stamina => ({
   payload: { stamina }
 });
 
-export const eat = () => dispatch => {};
+// export const eat = () => dispatch => {};
 
-export const drink = () => dispatch => {};
+// export const drink = () => dispatch => {};
 
-export const rest = () => dispatch => {};
+// export const rest = () => dispatch => {};

@@ -2,10 +2,17 @@
   "name": "rotten",
   "version": "0.1.0",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "lint-staged": {
-    "*.js": ["prettier --single-quote --write", "git add"],
-    "yarn.lock": ["git rm --cached"]
+    "*.js": [
+      "prettier --single-quote --write",
+      "git add"
+    ],
+    "yarn.lock": [
+      "git rm --cached"
+    ]
   },
   "scripts": {
     "precommit": "lint-staged"
