@@ -1,8 +1,26 @@
-const loopMiddleware = store => next => action => {
-  // console.log('dispatching', action)
-  let result = next(action);
-  // console.log('next state', store.getState())
-  return result;
-};
+import { actionTypes as loopActionsTypes } from '../actions';
 
-export default loopMiddleware;
+let lastAnimationFrameTime = 0;
+let subscribers = [];
+
+export default store => next => action => {
+  if (action.type === loopActionsTypes.TICK_LOOP) {
+    const { timestamp: curentAnimationFrameTime } = action.payload;
+    subscribers.forEach(subscriber => {
+      const { cadence = 1, loop } = subscriber;
+      if (
+        !lastAnimationFrameTime ||
+        curentAnimationFrameTime - lastAnimationFrameTime >= cadence * 1000
+      ) {
+        lastAnimationFrameTime = curentAnimationFrameTime;
+        store.dispatch(loop);
+      }
+    });
+  }
+
+  if (action.type === loopActionsTypes.SUBSCRIBE) {
+    subscribers.push(action.payload);
+  }
+
+  return next(action);
+};

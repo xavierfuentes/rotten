@@ -4,7 +4,7 @@ export const DEFAULT_STATE = {
   fps: 0
 };
 
-export default (state = DEFAULT_STATE, action) => {
+export default function(state = DEFAULT_STATE, action) {
   switch (action.type) {
     case actionTypes.TICK_LOOP:
       return {
@@ -15,4 +15,4 @@ export default (state = DEFAULT_STATE, action) => {
     default:
       return state;
   }
-};
+}

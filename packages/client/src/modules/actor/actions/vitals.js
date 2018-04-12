@@ -20,7 +20,10 @@ export const updateStamina = stamina => ({
 });
 
 // export const eat = () => dispatch => {};
+// export const starve = () => dispatch => {};
 
 // export const drink = () => dispatch => {};
+// export const drain = () => dispatch => {};
 
+// export const rest = () => dispatch => {};
 // export const rest = () => dispatch => {};
