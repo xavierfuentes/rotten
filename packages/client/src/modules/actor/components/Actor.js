@@ -8,6 +8,10 @@ class Actor extends React.Component {
     this.props.subscribe({ loop: this.props.actorLoop });
   }
 
+  componentWillUnmount() {
+    // this.props.unsubscribe({ loop: this.props.actorLoop });
+  }
+
   render() {
     return (
       <div style={{ width: '10px', height: '10px', backgroundColor: '#444' }}>

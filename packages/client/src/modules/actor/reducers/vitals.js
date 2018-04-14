@@ -1,9 +1,9 @@
 import { actionTypes } from '../actions/vitals';
 
 export const DEFAULT_STATE = {
-  energy: 10,
-  hydration: 10,
-  stamina: 10
+  energy: 2,
+  hydration: 2,
+  stamina: 2
 };
 
 export default (

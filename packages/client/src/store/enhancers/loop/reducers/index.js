@@ -1,7 +1,8 @@
 import { actionTypes } from '../actions';
 
 export const DEFAULT_STATE = {
-  fps: 0
+  fps: 0,
+  timestamp: null
 };
 
 export default function(state = DEFAULT_STATE, action) {

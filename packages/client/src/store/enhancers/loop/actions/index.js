@@ -1,7 +1,8 @@
 export const actionTypes = {
   START_LOOP: '@ROTTEN/LOOP/START',
   TICK_LOOP: '@ROTTEN/LOOP/TICK',
-  SUBSCRIBE: '@ROTTEN/LOOP/SUBSCRIBE'
+  SUBSCRIBE: '@ROTTEN/LOOP/SUBSCRIBE',
+  UNSUBSCRIBE: '@ROTTEN/LOOP/UNSUBSCRIBE'
 };
 
 export const startLoop = () => ({
@@ -16,4 +17,9 @@ export const tickLoop = ({ timestamp, fps }) => ({
 export const subscribe = ({ loop, cadence }) => ({
   type: actionTypes.SUBSCRIBE,
   payload: { loop, cadence }
+});
+
+export const unsubscribe = ({ loop }) => ({
+  type: actionTypes.UNSUBSCRIBE,
+  payload: { loop }
 });

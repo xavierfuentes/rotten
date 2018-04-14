@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 
-import { subscribe } from '../../../store/enhancers/loop/actions';
+import {
+  subscribe
+  // unsubscribe
+} from '../../../store/enhancers/loop/actions';
 import { actorLoop } from '../actions/loop';
 import Actor from '../components/Actor';
 
@@ -9,6 +12,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = {
   subscribe,
+  // unsubscribe,
   actorLoop
 };
 

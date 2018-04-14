@@ -1,13 +1,14 @@
-import { actionTypes as loopActionsTypes } from '../actions';
+import { actionTypes as loopActionTypes } from '../actions';
+
+const subscribers = new Map();
+const DEFAULT_CADENCE = 1; // 1 second
 
 let lastAnimationFrameTime = 0;
-let subscribers = [];
 
 export default store => next => action => {
-  if (action.type === loopActionsTypes.TICK_LOOP) {
+  if (action.type === loopActionTypes.TICK_LOOP) {
     const { timestamp: curentAnimationFrameTime } = action.payload;
-    subscribers.forEach(subscriber => {
-      const { cadence = 1, loop } = subscriber;
+    subscribers.forEach((cadence, loop) => {
       if (
         !lastAnimationFrameTime ||
         curentAnimationFrameTime - lastAnimationFrameTime >= cadence * 1000
@@ -18,9 +19,14 @@ export default store => next => action => {
     });
   }
 
-  if (action.type === loopActionsTypes.SUBSCRIBE) {
-    subscribers.push(action.payload);
+  if (action.type === loopActionTypes.SUBSCRIBE) {
+    let cadence = action.payload.cadence || DEFAULT_CADENCE;
+    subscribers.set(action.payload.loop, cadence);
   }
+
+  // if (action.type === loopActionTypes.UNSUBSCRIBE) {
+  //   subscribers.delete(action.payload.loop);
+  // }
 
   return next(action);
 };
