@@ -5,7 +5,7 @@ class Actor extends React.Component {
   static propTypes = {};
 
   componentDidMount() {
-    this.props.subscribe({ loop: this.props.actorLoop });
+    // this.props.subscribe({ loop: this.props.actorLoop });
   }
 
   componentWillUnmount() {
