@@ -1,9 +1,9 @@
 import { actionTypes } from '../actions/vitals';
 
 export const DEFAULT_STATE = {
-  energy: 2,
-  hydration: 2,
-  stamina: 2
+  energy: 5,
+  hydration: 5,
+  stamina: 5
 };
 
 export default (
@@ -21,7 +21,7 @@ export default (
         .pop()
         .toLowerCase();
       const nextKey = state[key] + action.payload[key];
-      return nextKey >= 0 ? { ...state, [key]: nextKey } : 0;
+      return { ...state, [key]: nextKey };
     default:
       return state;
   }

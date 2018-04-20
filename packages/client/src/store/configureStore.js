@@ -1,10 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './rootReducer';
+import rootSaga from './rootSaga';
 import { createGameLoop } from './enhancers/loop/createGameLoop';
-import loopMiddleware from './enhancers/loop/middleware';
 import { actionTypes as loopActionTypes } from './enhancers/loop/actions';
 
 const configureStore = preloadedState => {
@@ -13,7 +14,8 @@ const configureStore = preloadedState => {
     collapsed: true,
     predicate: (getState, { type }) => !ignoredActionTypes.includes(type) // eslint-disable-line no-unused-vars
   });
-  const middlewares = [loopMiddleware, thunkMiddleware, loggerMiddleware];
+  const sagaMiddleware = createSagaMiddleware();
+  const middlewares = [loggerMiddleware, thunkMiddleware, sagaMiddleware];
   const enhancers = [createGameLoop(), applyMiddleware(...middlewares)];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
@@ -38,6 +40,8 @@ const configureStore = preloadedState => {
       store.replaceReducer(rootReducer);
     });
   }
+
+  sagaMiddleware.run(rootSaga);
 
   return store;
 };
