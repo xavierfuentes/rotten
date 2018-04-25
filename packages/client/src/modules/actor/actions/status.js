@@ -1,12 +1,12 @@
 export const actionTypes = {
-  DEAD: '@ROTTEN/ACTOR/STATUS/DEAD',
-  ALIVE: '@ROTTEN/ACTOR/STATUS/ALIVE'
+  SPAWN: '@ROTTEN/ACTOR/STATUS/SPAWN',
+  UNSPAWN: '@ROTTEN/ACTOR/STATUS/UNSPAWN'
 };
 
-export const live = () => ({
-  type: actionTypes.ALIVE
+export const spawn = () => ({
+  type: actionTypes.SPAWN
 });
 
-export const die = () => ({
-  type: actionTypes.DEAD
+export const unspawn = () => ({
+  type: actionTypes.UNSPAWN
 });

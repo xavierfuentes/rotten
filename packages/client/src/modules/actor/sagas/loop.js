@@ -1,12 +1,9 @@
-import { all, take, put, select, fork } from 'redux-saga/effects';
+import { all, put, select, take } from 'redux-saga/effects';
 
+import vitalsSaga from './vitals';
 import { actionTypes as loopActionTypes } from '../../../store/enhancers/loop/actions';
-// import { die } from '../actions/status';
+import { unspawn } from '../actions/status';
 import { isAlive } from '../selectors/status';
-import { updateEnergy } from '../actions/vitals';
-
-// todo: listen for the actor to be spawned
-// start the sagas: vitals, status, etc.
 
 export function* actorLoopWatcher() {
   let lastAnimationFrameTime = 0;
@@ -21,15 +18,10 @@ export function* actorLoopWatcher() {
       curentAnimationFrameTime - lastAnimationFrameTime >= 1000 // ms
     ) {
       lastAnimationFrameTime = curentAnimationFrameTime;
-      yield fork(actorLoopWorker);
+      yield all([vitalsSaga()]);
     }
   }
-}
 
-function* actorLoopWorker() {
-  yield all([vitalsSaga()]);
-}
-
-function* vitalsSaga() {
-  yield put(updateEnergy(-1));
+  // yield die saga
+  yield put(unspawn());
 }

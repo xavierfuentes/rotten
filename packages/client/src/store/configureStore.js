@@ -15,7 +15,7 @@ const configureStore = preloadedState => {
     predicate: (getState, { type }) => !ignoredActionTypes.includes(type) // eslint-disable-line no-unused-vars
   });
   const sagaMiddleware = createSagaMiddleware();
-  const middlewares = [loggerMiddleware, thunkMiddleware, sagaMiddleware];
+  const middlewares = [thunkMiddleware, sagaMiddleware, loggerMiddleware];
   const enhancers = [createGameLoop(), applyMiddleware(...middlewares)];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose

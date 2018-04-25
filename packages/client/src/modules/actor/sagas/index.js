@@ -1,7 +1,8 @@
-import { all } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 
 import { actorLoopWatcher } from './loop';
+import { actionTypes as actorStatusActionTypes } from '../actions/status';
 
 export default function* actorSaga() {
-  yield all([actorLoopWatcher()]);
+  yield takeLatest(actorStatusActionTypes.SPAWN, actorLoopWatcher);
 }
