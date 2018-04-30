@@ -1,8 +1,9 @@
 import { actionTypes } from '../actions/vitals';
+import ACTOR_CONSTANTS from '../constants';
 
 export const DEFAULT_STATE = {
-  energy: 5,
-  hydration: 5,
+  energy: ACTOR_CONSTANTS.MALE_INITIAL_CALORIES,
+  hydration: ACTOR_CONSTANTS.MALE_INITIAL_HYDRATION,
   stamina: 5
 };
 
