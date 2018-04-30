@@ -13,8 +13,6 @@ describe('Actor vitals reducer', () => {
     expect(reducer({ energy: 11 }, actionCreators.updateEnergy(-1))).toEqual({
       energy: 10
     });
-    // never go below 0
-    expect(reducer({ energy: 5 }, actionCreators.updateEnergy(-10))).toEqual(0);
   });
 
   it('should update the hydration level', () => {
@@ -24,8 +22,6 @@ describe('Actor vitals reducer', () => {
     expect(reducer({ hydration: 11 }, actionCreators.updateHydration(-1))).toEqual({
       hydration: 10
     });
-    // never go below 0
-    expect(reducer({ hydration: 5 }, actionCreators.updateHydration(-10))).toEqual(0);
   });
 
   it('should update the stamina level', () => {
@@ -35,7 +31,5 @@ describe('Actor vitals reducer', () => {
     expect(reducer({ stamina: 11 }, actionCreators.updateStamina(-1))).toEqual({
       stamina: 10
     });
-    // never go below 0
-    expect(reducer({ stamina: 5 }, actionCreators.updateStamina(-10))).toEqual(0);
   });
 });
