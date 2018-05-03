@@ -2,11 +2,11 @@ import * as actionCreators from '../actions/vitals';
 import reducer, { DEFAULT_STATE } from './vitals';
 
 describe('Actor vitals reducer', () => {
-  it('should return the initial state', () => {
+  test('returns the initial state', () => {
     expect(reducer(undefined, {})).toEqual(DEFAULT_STATE);
   });
 
-  it('should update the energy level', () => {
+  test('updates the energy level', () => {
     expect(reducer({ energy: 5 }, actionCreators.updateEnergy(10))).toEqual({
       energy: 15
     });
@@ -15,7 +15,7 @@ describe('Actor vitals reducer', () => {
     });
   });
 
-  it('should update the hydration level', () => {
+  test('updates the hydration level', () => {
     expect(reducer({ hydration: 5 }, actionCreators.updateHydration(10))).toEqual({
       hydration: 15
     });
@@ -24,7 +24,7 @@ describe('Actor vitals reducer', () => {
     });
   });
 
-  it('should update the stamina level', () => {
+  test('updates the stamina level', () => {
     expect(reducer({ stamina: 5 }, actionCreators.updateStamina(10))).toEqual({
       stamina: 15
     });
