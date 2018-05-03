@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Actor from '../components/Actor';
-import { spawn } from '../actions/status';
+import { spawn } from '../actions/character';
 
 const mapStateToProps = state => ({
   vitals: state.actor.vitals

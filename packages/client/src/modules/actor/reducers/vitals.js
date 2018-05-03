@@ -1,19 +1,18 @@
-import { actionTypes } from '../actions/vitals';
-import ACTOR_CONSTANTS from '../constants';
+import { actionTypes as vitalsActionTypes } from '../actions/vitals';
 
 export const DEFAULT_STATE = {
-  energy: ACTOR_CONSTANTS.MALE_INITIAL_CALORIES,
-  hydration: ACTOR_CONSTANTS.MALE_INITIAL_HYDRATION,
-  stamina: 5
+  energy: 0,
+  hydration: 0,
+  stamina: 0
 };
 
-export default (state = DEFAULT_STATE, action = { type: '', payload: null }) => {
+export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     /* eslint-disable no-fallthrough */
-    case actionTypes.UPDATE_ENERGY:
-    case actionTypes.UPDATE_HYDRATION:
+    case vitalsActionTypes.UPDATE_ENERGY:
+    case vitalsActionTypes.UPDATE_HYDRATION:
     /* eslint-enable no-fallthrough */
-    case actionTypes.UPDATE_STAMINA:
+    case vitalsActionTypes.UPDATE_STAMINA:
       const key = action.type
         .split('UPDATE_')
         .pop()

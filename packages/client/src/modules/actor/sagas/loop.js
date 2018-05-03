@@ -1,9 +1,9 @@
 import { all, put, select, take } from 'redux-saga/effects';
 
-import vitalsSaga from './vitals';
 import { actionTypes as loopActionTypes } from '../../../store/enhancers/loop/actions';
-import { unspawn } from '../actions/status';
-import { isAlive } from '../selectors/status';
+import { unspawn } from '../actions/character';
+import vitalsSaga from './vitals';
+import { isAlive } from '../selectors/vitals';
 
 export function* actorLoopWatcher() {
   let lastAnimationFrameTime = 0;
@@ -18,6 +18,7 @@ export function* actorLoopWatcher() {
       curentAnimationFrameTime - lastAnimationFrameTime >= 1000 // ms
     ) {
       lastAnimationFrameTime = curentAnimationFrameTime;
+
       yield all([vitalsSaga()]);
     }
   }
